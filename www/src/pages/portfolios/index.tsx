@@ -2,9 +2,9 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import { fetcher, QueryKeys } from '../../queryClient';
 import { Foliage } from '../../constants/types';
-import FoliageItem from '../../components/foliage/item';
+import PortfolioItem from '../../components/portfolio/item';
 
-const FoliageList = () => {
+const PortfolioListPage = () => {
   const { data } = useQuery<Foliage[]>(QueryKeys.FOLIAGES, () =>
     fetcher({
       method: 'GET',
@@ -12,20 +12,18 @@ const FoliageList = () => {
     }),
   );
 
+  if (data?.length === 0) return <div>준비된 내역이 없습니다.</div>;
+
   return (
     <div>
       <h1>포트폴리오 목록</h1>
       <ul className="foliages">
         {data?.map((foliage) => (
-          <FoliageItem
-            data={foliage}
-            // onToggleLike={onToggleLike}
-            key={foliage.id}
-          />
+          <PortfolioItem data={foliage} key={foliage.id} />
         ))}
       </ul>
     </div>
   );
 };
 
-export default FoliageList;
+export default PortfolioListPage;
