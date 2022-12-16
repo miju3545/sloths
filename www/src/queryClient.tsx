@@ -5,7 +5,18 @@ export const getClient = (() => {
   let client: QueryClient | null = null;
 
   return () => {
-    if (!client) client = new QueryClient();
+    if (!client)
+      client = new QueryClient({
+        defaultOptions: {
+          queries: {
+            cacheTime: 1000 * 60 * 60 * 24,
+            staleTime: 1000 * 60,
+            refetchOnMount: false,
+            refetchOnReconnect: false,
+            refetchOnWindowFocus: false,
+          },
+        },
+      });
     return client;
   };
 })();
@@ -27,8 +38,8 @@ export const fetcher = ({
   path: string;
   body?: AnyOBJ;
   params?: AnyOBJ;
-}): Promise<any[]> => {
-  const url = `${BASE_URL}${path}`;
+}): Promise<any> => {
+  let url = `${BASE_URL}${path}`;
   const options: RequestInit = {
     method,
     headers: {
@@ -36,6 +47,16 @@ export const fetcher = ({
       'Access-Control-Allow-Origin': BASE_URL,
     },
   };
+
+  if (params) {
+    const searchParams = new URLSearchParams(params);
+    url += '?' + searchParams.toString();
+  }
+
+  if (body) {
+    options.body = JSON.stringify(body);
+  }
+
   return fetch(url, options)
     .then((res) => res.json())
     .then((json) => json)
