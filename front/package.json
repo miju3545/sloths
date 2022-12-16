@@ -16,6 +16,7 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.4.5",
     "redux": "^4.2.0",
+    "redux-devtools-extension": "^2.13.9",
     "styled-components": "^5.3.6",
     "vite-plugin-next-react-router": "^0.6.2"
   },
