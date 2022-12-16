@@ -7,9 +7,21 @@
 #### 📌 설정
 
 - react, typescript
-- react-query, redux
+- react-query, redux, redux-thunk
 - scss, styled-components, storybook
 - jest
+
+#### 📌 플로우
+
+```
+- sloth: creator, viewer
+
+- sloth > portfolios > project, articles/blog, github
+        > bookmarks
+        > thumbsup(like)
+        > stamps
+        > following/follows
+```
 
 #### 📌 폴더 구조
 
@@ -17,16 +29,19 @@
 - src
   - pages(api)
     - sloths: 유저
-    - foliages: 포트폴리오
+    - portfolios: 포트폴리오
+    - projects: 프로젝트
+    - blogs: 블로그
     - settings: 설정
-    - chats: 채팅
   - components
   - utils
-  - redux
-    - actions
-    - contants
-      - ActionTypes.ts
-    - reducers
+  - context 👉🏻 session api
+    - SessionContext
+  - modules 👉🏻 redux로 state/middleware api
+    - portfolio
+    - github
+    - sloth
+
 
 ```
 
@@ -36,4 +51,6 @@
 
 - nest
 - typeORM
-- mysql
+- mysql(db)
+- firebase
+- heroku, vercel(배포)
