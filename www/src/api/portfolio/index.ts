@@ -7,6 +7,12 @@ const getPortfolios = () => {
   return axios.get<Portfolios>(`${BASE_URL}/porfolios`).then((res) => res.data);
 };
 
+const postPortfolio = (portfolioInfo: any) => {
+  return axios
+    .post<Portfolio>(`${BASE_URL}/portfolios`, portfolioInfo)
+    .then((res) => res.data);
+};
+
 const postClap = (portfolio: Portfolio) => {
   return axios
     .post<Portfolio>(`${BASE_URL}/portfolios/${portfolio.id}/clap`, {
@@ -21,4 +27,4 @@ const deleteClap = (id: number) => {
     .then((res) => res.data);
 };
 
-export default { getPortfolios, postClap, deleteClap };
+export default { getPortfolios, postPortfolio, postClap, deleteClap };

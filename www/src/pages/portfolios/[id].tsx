@@ -1,22 +1,20 @@
 import React from 'react';
 import { useQuery } from 'react-query';
 import { fetcher, QueryKeys } from '../../queryClient';
-import { Foliage } from '../../constants/types';
+import { Portfolio } from '../../constants/types';
 import { useParams } from 'react-router-dom';
 import PortfolioDetail from '../../components/portfolio/detail';
 import Gnb from '../../components/gnb';
 
 const PortfolioDetailPage = () => {
   const { id } = useParams();
-  const { data } = useQuery<Foliage>([QueryKeys.FOLIAGES, id], () =>
+  const { data } = useQuery<Portfolio>([QueryKeys.FOLIAGES, id], () =>
     fetcher({
       method: 'GET',
-      path: `/products/${id}`,
+      path: `/portfolios/${id}`,
     }),
   );
-
   if (!data) return null;
-
   return (
     <div>
       <Gnb />

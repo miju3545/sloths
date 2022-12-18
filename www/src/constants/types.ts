@@ -1,16 +1,35 @@
 export type AnyOBJ = { [key: string]: any };
 
+export type Sloth = {
+  id: number;
+  nickname: string;
+  email: string;
+  password?: string;
+  tel: string;
+};
+
 export type Rating = {
   rate: number;
   count: number;
 };
 
-export type Foliage = {
+export type Category = '개발' | '기획' | '광고' | '기타';
+
+export type Portfolio = {
   id: number;
-  category: string;
+  category: Category;
   title: string;
-  description: string;
-  image: string;
-  price: string;
-  rating: Rating;
+  summary: string;
+  thumbnailUrl: string;
+  meta: {
+    visits: number;
+    claps: number;
+  };
+  isClapped: boolean;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type Portfolios = {
+  portfolios: Portfolio[];
 };
