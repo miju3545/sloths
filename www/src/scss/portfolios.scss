@@ -1,11 +1,11 @@
-.foliages {
+.portfolios {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
 
-.foliage-item {
+.portfolio-item {
   border: 1px solid #000;
   padding: 10px;
 

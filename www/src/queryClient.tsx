@@ -22,11 +22,12 @@ export const getClient = (() => {
 })();
 
 export const QueryKeys: { [key: string]: string } = {
+  MOCK: 'MOCK',
   FOLIAGES: 'FOLIAGES',
   SLOTHS: 'SLOTHS',
 };
 
-const BASE_URL = 'https://fakestoreapi.com';
+const BASE_URL = 'http://localhost:5173';
 
 export const fetcher = ({
   method,

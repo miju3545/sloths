@@ -12,6 +12,26 @@ export const GET_PORTFOLIO = 'portfolio/GET_PORTFOLIO';
 export const GET_PORTFOLIO_SUCCESS = 'portfolio/GET_PORTFOLIO_SUCCESS';
 export const GET_PORTFOLIO_ERROR = 'portfolio/GET_PORTFOLIO_ERROR';
 
+// 포트폴리오 생성
+export const POST_PORTFOLIO = 'portfolio/POST_PORTFOLIO';
+export const POST_PORTFOLIO_SUCCESS = 'portfolio/POST_PORTFOLIO_SUCCESS';
+export const POST_PORTFOLIO_ERROR = 'portfolio/POST_PORTFOLIO_ERROR';
+
+// 포트폴리오 수정
+export const PATCH_PORTFOLIO = 'portfolio/PATCH_PORTFOLIO';
+export const PATCH_PORTFOLIO_SUCCESS = 'portfolio/PATCH_PORTFOLIO_SUCCESS';
+export const PATCH_PORTFOLIO_ERROR = 'portfolio/PATCH_PORTFOLIO_ERROR';
+
+// 포트폴리오 변경
+export const PUT_PORTFOLIO = 'portfolio/PUT_PORTFOLIO';
+export const PUT_PORTFOLIO_SUCCESS = 'portfolio/PUT_PORTFOLIO_SUCCESS';
+export const PUT_PORTFOLIO_ERROR = 'portfolio/PUT_PORTFOLIO_ERROR';
+
+// 포트폴리오 삭제
+export const DELETE_PORTFOLIO = 'portfolio/DELETE_PORTFOLIO';
+export const DELETE_PORTFOLIO_SUCCESS = 'portfolio/DELETE_PORTFOLIO_SUCCESS';
+export const DELETE_PORTFOLIO_ERROR = 'portfolio/DELETE_PORTFOLIO_ERROR';
+
 // 포트폴리오에 박수 보내기
 export const POST_CLAP = 'portfolio/POST_CLAP';
 export const POST_CLAP_SUCCESS = 'portfolio/POST_CLAP_SUCCESS';

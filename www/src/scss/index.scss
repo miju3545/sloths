@@ -1,8 +1,11 @@
 @import './portfolios.scss';
 @import './githubs.scss';
+@import './modal.scss';
+@import './main.scss';
 
 #root {
   max-width: 900px;
+  margin: auto;
 }
 
 body {
